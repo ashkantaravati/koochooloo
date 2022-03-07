@@ -42,3 +42,4 @@ Again, don't forget the .env file.
 * DEBUG: Django DEBUG
 * HASHID_FIELD_SALT
 * BASE_HOST:Used for creating Short links
+* ALLOWED_HOSTS: Django ALLOWED_HOSTS. *A String of Comma-separated Values*

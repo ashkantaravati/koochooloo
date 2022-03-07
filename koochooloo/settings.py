@@ -17,7 +17,7 @@ DEBUG = env("DEBUG", default="False") == "True"
 
 HASHID_FIELD_SALT = env("HASHID_FIELD_SALT")
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = env("ALLOWED_HOSTS").split(",")
 
 INSTALLED_APPS = [
     "redirect",
