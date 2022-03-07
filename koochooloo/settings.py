@@ -19,6 +19,8 @@ HASHID_FIELD_SALT = env("HASHID_FIELD_SALT")
 
 ALLOWED_HOSTS = env("ALLOWED_HOSTS").split(",")
 
+STATIC_ROOT = Path(BASE_DIR).joinpath("static")
+
 INSTALLED_APPS = [
     "redirect",
     "django.contrib.admin",
