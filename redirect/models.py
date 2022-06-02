@@ -26,5 +26,29 @@ class Reference(models.Model):
     def short_url_with_protocol_https(self):
         return f"https://{self.short_url}"
 
+    @property
+    def total_visits(self):
+        return self.visits.count()
+
     def __str__(self):
         return f"Reference #{self.id}({self.title})"
+
+
+class Visit(models.Model):
+    id = HashidAutoField(primary_key=True)
+    reference = models.ForeignKey(
+        Reference,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="visits",
+    )
+    requested_url = models.CharField(max_length=255)
+    ip = models.GenericIPAddressField()
+    user_agent = models.CharField(max_length=255)
+    http_response_code = models.IntegerField(default=200)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"Visit #{self.id}({self.reference})"

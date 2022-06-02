@@ -14,6 +14,7 @@ class ReferenceSerializer(serializers.ModelSerializer):
             "short_url",
             "short_url_with_protocol_http",
             "short_url_with_protocol_https",
+            "total_visits",
             "created_at",
             "updated_at",
         )
@@ -21,6 +22,7 @@ class ReferenceSerializer(serializers.ModelSerializer):
             "short_url",
             "short_url_with_protocol_http",
             "short_url_with_protocol_https",
+            "total_visits",
             "created_at",
             "updated_at",
         )

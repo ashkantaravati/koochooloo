@@ -1,5 +1,19 @@
 # Koochooloo - Simple Self-Hosted URL Shortener with Admin Panel
 
+## Features
+
+- Create a link (We call it a reference)
+- Activate and deactivate links
+- Get an automatically generated hashed short link
+- Get both http and https URLS for your short link
+- Add and manage users
+- Add and manage user tokens
+- Get reference data using API
+- Create references from API
+- See number of visits to a reference
+- See details of each visit to a reference
+- See a log of all visits/requests
+
 ## Setup
 
 1. Clone this repository
