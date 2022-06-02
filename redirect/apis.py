@@ -22,6 +22,8 @@ class ReferenceViewSet(
     is_active -- Whether or not the reference is active. Optional.
     description -- A description of the reference. Optional.
     short_url -- The resulting short URL for the reference, created with the configured BASE_HOST and hashid generated for this reference automatically. read-only.
+    short_url_with_protocol_http -- short_url with protocol http prepended. read-only.
+    short_url_with_protocol_https -- short_url with protocol https prepended. read-only.
     created_at -- The date and time the reference was created. read-only.
     updated_at -- The date and time the reference was last updated. read-only.
 

@@ -75,14 +75,16 @@ API endpoint that allows external systems to create, list, and retrieve referenc
 created_at --  read-only.
 updated_at -- The date and time the reference was last updated. read-only.
 
-| Field Name  | Type      | Optional      | Descriptions                                                                                                                           |
-| ----------- | --------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| title       | String    | Required      | The title of the reference                                                                                                             |
-| destination | Valid URL | Required      | The destination of the reference                                                                                                       |
-| is_active   | Boolean   | default=true  | Whether or not the reference is active                                                                                                 |
-| short_url   | Valid URL | Response Only | The resulting short URL for the reference created with the configured BASE_HOST and hashid generated for this reference automatically. |
-| created_at  | string    | Response Only | The date and time the reference was created.                                                                                           |
-| updated_at  | string    | Response Only | The date and time the reference was last updated. read-only                                                                            |
+| Field Name                    | Type      | Optional      | Descriptions                                                                                                                           |
+| ----------------------------- | --------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| title                         | String    | Required      | The title of the reference                                                                                                             |
+| destination                   | Valid URL | Required      | The destination of the reference                                                                                                       |
+| is_active                     | Boolean   | default=true  | Whether or not the reference is active                                                                                                 |
+| short_url                     | Valid URL | Response Only | The resulting short URL for the reference created with the configured BASE_HOST and hashid generated for this reference automatically. |
+| short_url_with_protocol_http  | Valid URL | Response Only | short_url with protocol http prepended. read-only                                                                                      |
+| short_url_with_protocol_https | Valid URL | Response Only | short_url with protocol https prepended. read-only                                                                                     |
+| created_at                    | string    | Response Only | The date and time the reference was created.                                                                                           |
+| updated_at                    | string    | Response Only | The date and time the reference was last updated. read-only                                                                            |
 
 Sample POST Payload:
 

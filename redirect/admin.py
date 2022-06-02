@@ -7,7 +7,8 @@ class OrganizationAdmin(admin.ModelAdmin):
     list_display = (
         "id",
         "title",
-        "short_url",
+        "short_url_with_protocol_http",
+        "short_url_with_protocol_https",
         "destination",
         "is_active",
         "updated_at",

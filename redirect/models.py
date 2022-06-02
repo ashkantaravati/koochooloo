@@ -18,5 +18,13 @@ class Reference(models.Model):
     def short_url(self):
         return f"{BASE_HOST}/r/{self.id}"
 
+    @property
+    def short_url_with_protocol_http(self):
+        return f"http://{self.short_url}"
+
+    @property
+    def short_url_with_protocol_https(self):
+        return f"https://{self.short_url}"
+
     def __str__(self):
         return f"Reference #{self.id}({self.title})"
