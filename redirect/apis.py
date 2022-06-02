@@ -1,7 +1,12 @@
 from rest_framework import viewsets, mixins
-
+from rest_framework.authentication import SessionAuthentication, TokenAuthentication
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from redirect.models import Reference
 from redirect.serializers import ReferenceSerializer
+
+
+class BearerTokenAuthentication(TokenAuthentication):
+    keyword = "Bearer"
 
 
 class ReferenceViewSet(
@@ -21,6 +26,9 @@ class ReferenceViewSet(
     updated_at -- The date and time the reference was last updated. read-only.
 
     """
+
+    authentication_classes = [SessionAuthentication, BearerTokenAuthentication]
+    permission_classes = [IsAuthenticatedOrReadOnly]
 
     queryset = Reference.objects.all()
     serializer_class = ReferenceSerializer
