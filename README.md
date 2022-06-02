@@ -86,8 +86,6 @@ Again, don't forget the .env file.
 
 API endpoint that allows external systems to create, list, and retrieve references.
 
-created_at --  read-only.
-updated_at -- The date and time the reference was last updated. read-only.
 
 | Field Name                    | Type      | Optional      | Descriptions                                                                                                                           |
 | ----------------------------- | --------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
