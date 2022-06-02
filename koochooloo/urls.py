@@ -4,8 +4,8 @@ from rest_framework import routers
 
 from redirect import views, apis
 
-router = routers.SimpleRouter()
-router.register(r"references", apis.ReferenceViewSet)
+router = routers.SimpleRouter(trailing_slash=False)
+router.register(r"references/?", apis.ReferenceViewSet)
 
 
 urlpatterns = [
