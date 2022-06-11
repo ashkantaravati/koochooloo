@@ -44,7 +44,7 @@ class Visit(models.Model):
         related_name="visits",
     )
     requested_url = models.CharField(max_length=255)
-    ip = models.GenericIPAddressField()
+    ip = models.GenericIPAddressField(null=True)
     user_agent = models.CharField(max_length=255)
     http_response_code = models.IntegerField(default=200)
     created_at = models.DateTimeField(auto_now_add=True)
