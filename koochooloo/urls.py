@@ -10,6 +10,6 @@ router.register(r"references/?", apis.ReferenceViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("r/<str:id>", views.permamnent_redirect, name="redirect"),
+    path("r/<str:id>/", views.permamnent_redirect, name="redirect"),
     path("api/", include(router.urls)),
 ]
