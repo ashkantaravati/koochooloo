@@ -13,6 +13,7 @@
 - See number of visits to a reference
 - See details of each visit to a reference
 - See a log of all visits/requests
+- Create and serve static content (Servables) with user-defined MIME types.
 
 ## Setup
 

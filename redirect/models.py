@@ -1,3 +1,4 @@
+from pyexpat import model
 from django.db import models
 from hashid_field.field import HashidAutoField
 from django.conf import settings

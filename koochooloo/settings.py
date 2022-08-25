@@ -23,6 +23,7 @@ STATIC_ROOT = Path(BASE_DIR).joinpath("static")
 
 INSTALLED_APPS = [
     "redirect",
+    "servables",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
