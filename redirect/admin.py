@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.translation import gettext_lazy as _
 
 from .models import Reference, Visit
 
@@ -46,5 +47,5 @@ class VisitAdmin(admin.ModelAdmin):
     )
 
 
-admin.site.site_title = "Koochooloo URL Redirection Tool"
-admin.site.site_header = "Koochooloo URL Redirection Tool"
+admin.site.site_title = _("Koochooloo URL Redirection Tool")
+admin.site.site_header = _("Koochooloo URL Redirection Tool")
