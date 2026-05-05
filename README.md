@@ -49,7 +49,7 @@ python manage.py test
 - Lint locally with `ruff check .`
 - Optional: install pre-commit hooks with `pre-commit install`
 - CI runs lint + tests on all pushes and pull requests (`.github/workflows/ci.yml`).
-- Tests can run without a custom `.env` because safe development defaults are provided in settings.
+- Ensure `SECRET_KEY` is set (for example via `.env`) before running tests locally.
 
 ## Docker
 Build and run with Docker Compose:
