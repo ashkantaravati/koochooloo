@@ -44,6 +44,13 @@ A self-hosted URL shortener built with Django and Django REST Framework.
 python manage.py test
 ```
 
+
+## Developer quality workflow
+- Lint locally with `ruff check .`
+- Optional: install pre-commit hooks with `pre-commit install`
+- CI runs lint + tests on all pushes and pull requests (`.github/workflows/ci.yml`).
+- Ensure `SECRET_KEY` is set (for example via `.env`) before running tests locally.
+
 ## Docker
 Build and run with Docker Compose:
 ```bash

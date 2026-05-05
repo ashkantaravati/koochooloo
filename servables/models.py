@@ -1,9 +1,8 @@
-from django.db import models
 from django.conf import settings
-from django.forms import URLField
+from django.db import models
+from hashid_field.field import HashidAutoField
 
 BASE_HOST = settings.BASE_HOST
-from hashid_field.field import HashidAutoField
 
 CONTENT_TYPE_CHOICES = [
     ("text/css", "CSS (text/css)"),

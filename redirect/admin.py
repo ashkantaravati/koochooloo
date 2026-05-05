@@ -1,4 +1,5 @@
 from django.contrib import admin
+
 from .models import Reference, Visit
 
 
@@ -18,7 +19,7 @@ class VisitTabularInline(admin.TabularInline):
 
 
 @admin.register(Reference)
-class OrganizationAdmin(admin.ModelAdmin):
+class ReferenceAdmin(admin.ModelAdmin):
     list_display = (
         "id",
         "title",

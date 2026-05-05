@@ -1,6 +1,7 @@
-from rest_framework import viewsets, mixins
+from rest_framework import mixins, viewsets
 from rest_framework.authentication import SessionAuthentication, TokenAuthentication
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
+
 from redirect.models import Reference
 from redirect.serializers import ReferenceSerializer
 
@@ -21,7 +22,9 @@ class ReferenceViewSet(
     destination -- The destination of the reference. Should be a valid URL. required
     is_active -- Whether or not the reference is active. Optional.
     description -- A description of the reference. Optional.
-    short_url -- The resulting short URL for the reference, created with the configured BASE_HOST and hashid generated for this reference automatically. read-only.
+    short_url -- The resulting short URL for the reference, created with the
+    configured BASE_HOST and hashid generated for this reference
+    automatically. read-only.
     short_url_with_protocol_http -- short_url with protocol http prepended. read-only.
     short_url_with_protocol_https -- short_url with protocol https prepended. read-only.
     created_at -- The date and time the reference was created. read-only.
