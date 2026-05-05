@@ -1,10 +1,10 @@
-from django.shortcuts import render
-from .models import Reference, Visit
 from django.http import (
     HttpResponseNotFound,
     HttpResponsePermanentRedirect,
-    HttpResponseRedirect,
 )
+
+from .models import Reference, Visit
+
 
 def get_client_ip(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
@@ -14,7 +14,7 @@ def get_client_ip(request):
         ip = request.META.get('REMOTE_ADDR')
     return ip
 
-def permamnent_redirect(request, id):
+def permanent_redirect(request, id):
     ip = get_client_ip(request)
     user_agent = request.META.get("HTTP_USER_AGENT")
     requested_url = request.path

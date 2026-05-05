@@ -1,25 +1,20 @@
-from pathlib import Path
-import environ
 import os
-
 from pathlib import Path
+
+import environ
 
 env = environ.Env()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 
-BASE_HOST = env("BASE_HOST")
+BASE_HOST = env("BASE_HOST", default="localhost:8000")
+SECRET_KEY = env("SECRET_KEY", default="unsafe-dev-secret-key")
+DEBUG = env.bool("DEBUG", default=False)
+HASHID_FIELD_SALT = env("HASHID_FIELD_SALT", default="unsafe-dev-hashid-salt")
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=["localhost", "127.0.0.1"])
 
-SECRET_KEY = env("SECRET_KEY")
-
-DEBUG = env("DEBUG", default="False") == "True"
-
-HASHID_FIELD_SALT = env("HASHID_FIELD_SALT")
-
-ALLOWED_HOSTS = env("ALLOWED_HOSTS").split(",")
-
-STATIC_ROOT = Path(BASE_DIR).joinpath("static")
+STATIC_ROOT = BASE_DIR / "static"
 
 INSTALLED_APPS = [
     "redirect",
@@ -73,7 +68,10 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+        "NAME": (
+            "django.contrib.auth.password_validation."
+            "UserAttributeSimilarityValidator"
+        ),
     },
     {
         "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
@@ -86,19 +84,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 LANGUAGE_CODE = "en-us"
-
 TIME_ZONE = "Asia/Tehran"
-
 USE_I18N = True
-
-USE_L10N = True
-
 USE_TZ = True
 
-
 STATIC_URL = "/static/"
-
-
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

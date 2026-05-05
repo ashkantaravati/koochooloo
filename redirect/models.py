@@ -1,7 +1,6 @@
-from pyexpat import model
+from django.conf import settings
 from django.db import models
 from hashid_field.field import HashidAutoField
-from django.conf import settings
 
 BASE_HOST = settings.BASE_HOST
 
