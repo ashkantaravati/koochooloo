@@ -52,7 +52,10 @@ class Visit(models.Model):
     requested_url = models.CharField(max_length=255, verbose_name=_("Requested URL"))
     ip = models.GenericIPAddressField(null=True, verbose_name=_("IP"))
     user_agent = models.CharField(max_length=255, verbose_name=_("User agent"))
-    http_response_code = models.IntegerField(default=200, verbose_name=_("HTTP response code"))
+    http_response_code = models.IntegerField(
+        default=200,
+        verbose_name=_("HTTP response code"),
+    )
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=_("Created at"))
     updated_at = models.DateTimeField(auto_now=True, verbose_name=_("Updated at"))
 

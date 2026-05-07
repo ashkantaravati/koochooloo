@@ -32,9 +32,9 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/example/koochooloo"
-Repository = "https://github.com/example/koochooloo"
-Issues = "https://github.com/example/koochooloo/issues"
+Homepage = "https://github.com/ashkantaravati/koochooloo"
+Repository = "https://github.com/ashkantaravati/koochooloo"
+Issues = "https://github.com/ashkantaravati/koochooloo/issues"
 
 [tool.setuptools]
 include-package-data = true
